@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mary Ann Menes | Executive VA & Operations Specialist</title>
+  <meta name="description" content="Mary Ann Menes — Executive Virtual Assistant, Creative Support & Property Management specialist. Helping businesses run smoothly and grow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand palette */
+      --white:       #ffffff;
+      --mint:        #dbeae6;
+      --mint-deep:   #bdd5cf;
+      --sage:        #b2b5a5;
+      --sage-mid:    #8a8e7e;
+      --sage-dark:   #6b6e60;
+      --cream:       #f2f5ef;
+      --forest:      #2c3525;
+      --forest-light:#4a5840;
+      --charcoal:    #333330;
+      --mid-gray:    #737068;
+      --border:      #cdd5c6;
+      --shadow:      rgba(44,53,37,0.07);
+      --shadow-md:   rgba(44,53,37,0.13);
+
+      /* Semantic aliases */
+      --terra:       var(--sage-dark);
+      --terra-dark:  var(--forest);
+      --terra-light: var(--mint);
+      --navy:        var(--forest);
+      --navy-light:  var(--forest-light);
+
+      --radius:     14px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Scroll Animation ────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(242,245,239,0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: box-shadow var(--transition);
+    }
+    nav.scrolled { box-shadow: 0 4px 24px var(--shadow); }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--forest);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--sage-dark); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--forest-light);
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 2px;
+      background: var(--sage-dark);
+      border-radius: 2px;
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--forest) !important;
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
+    }
+    .nav-cta:hover {
+      background: var(--forest-light) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(44,53,37,0.28) !important;
+    }
+    .nav-cta::after { display: none !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--forest);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 2rem 60px;
+      background: linear-gradient(145deg, #f2f5ef 0%, #e8f0ec 50%, #dbeae6 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(178,181,165,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    #home::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(219,234,230,0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(219,234,230,0.7);
+      color: var(--forest);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid var(--mint-deep);
+    }
+    .hero-badge::before {
+      content: '●';
+      font-size: 0.5rem;
+      animation: pulse 2s infinite;
+      color: #5a7a50;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      color: var(--forest);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .hero-text h1 .highlight { color: var(--sage-dark); }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--forest-light);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .hero-subtitle .sep { color: var(--sage); font-weight: 300; }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: #555550;
+      max-width: 460px;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-primary {
+      background: var(--forest);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 18px rgba(44,53,37,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--forest-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(44,53,37,0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--forest);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid var(--forest);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover {
+      background: var(--forest);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .hero-socials span {
+      font-size: 0.8rem;
+      color: var(--mid-gray);
+      font-weight: 500;
+    }
+    .social-link {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--forest-light);
+      font-size: 0.9rem;
+      transition: all var(--transition);
+      background: var(--white);
+    }
+    .social-link:hover {
+      border-color: var(--sage-dark);
+      color: var(--forest);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+
+    /* ── Hero Visual ─────────────────────────────────────────── */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 60px var(--shadow-md);
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
+      position: relative;
+    }
+
+    /* Photo Placeholder */
+    .photo-placeholder {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 1.25rem;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .photo-placeholder-inner {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      border: 2.5px dashed var(--mint-deep);
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .photo-placeholder:hover .photo-placeholder-inner {
+      background: var(--mint);
+      border-color: var(--sage-dark);
+    }
+    .photo-placeholder-inner svg {
+      width: 28px; height: 28px;
+      stroke: var(--sage-dark);
+      stroke-width: 1.5;
+      fill: none;
+      transition: stroke var(--transition);
+    }
+    .photo-placeholder-inner span {
+      font-size: 0.65rem;
+      color: var(--sage-dark);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+    .photo-placeholder input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%; height: 100%;
+    }
+    .photo-preview {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .hero-card h3 {
+      font-size: 1.2rem;
+      color: var(--forest);
+      margin-bottom: 0.25rem;
+    }
+    .hero-card p {
+      font-size: 0.82rem;
+      color: var(--mid-gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-around;
+      padding: 1.25rem 0 0;
+      border-top: 1px solid var(--border);
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--sage-dark);
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--mid-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.1rem;
+    }
+
+    .floating-tag {
+      position: absolute;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 0.6rem 1rem;
+      box-shadow: 0 8px 24px var(--shadow-md);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      border: 1px solid var(--border);
+    }
+    .floating-tag .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+    .tag-1 { top: 15%; right: -20px; animation: float1 3s ease-in-out infinite; }
+
+    @keyframes float1 {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ── SECTION SHARED ──────────────────────────────────────── */
+    section { padding: 90px 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--sage-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--forest);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: #666660;
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .divider {
+      width: 50px; height: 3px;
+      background: linear-gradient(90deg, var(--sage), var(--mint));
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── ABOUT ───────────────────────────────────────────────── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-bg-card {
+      background: linear-gradient(135deg, var(--mint) 0%, #c8dbd6 100%);
+      border-radius: 24px;
+      padding: 2.5rem;
+    }
+
+    /* About photo placeholder */
+    .about-photo-placeholder {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      border: 2px dashed var(--sage-dark);
+      background: rgba(255,255,255,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+      transition: background var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-photo-placeholder:hover { background: rgba(255,255,255,0.75); }
+    .about-photo-placeholder svg { width: 22px; height: 22px; stroke: var(--forest); stroke-width: 1.5; fill: none; }
+    .about-photo-placeholder span { font-size: 0.55rem; color: var(--forest); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    .about-photo-placeholder input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+    .about-photo-preview { position: absolute; inset: 0; border-radius: 50%; object-fit: cover; display: none; }
+
+    .about-bg-card h3 {
+      font-size: 1.15rem;
+      color: var(--forest);
+      margin-bottom: 0.3rem;
+    }
+    .about-bg-card p {
+      font-size: 0.9rem;
+      color: var(--forest-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--forest-light);
+      margin-bottom: 0.75rem;
+    }
+    .about-detail-item .icon-circle {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    .about-text .section-desc { margin-bottom: 1.75rem; }
+
+    .value-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .value-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+    }
+    .value-card .vc-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .value-card h4 { font-size: 0.9rem; color: var(--forest); margin-bottom: 0.2rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .value-card p { font-size: 0.8rem; color: var(--mid-gray); line-height: 1.5; }
+
+    /* ── SERVICES ────────────────────────────────────────────── */
+    #services { background: linear-gradient(180deg, var(--cream) 0%, var(--mint) 100%); }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .services-header .left { flex: 1; min-width: 280px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--sage-dark), var(--mint));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px var(--shadow-md);
+      border-color: var(--mint-deep);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: var(--mint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .service-card:hover .service-icon { background: var(--sage); transform: scale(1.05); }
+
+    .service-card h3 { font-size: 1.05rem; color: var(--forest); margin-bottom: 0.6rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .service-card p { font-size: 0.875rem; color: var(--mid-gray); line-height: 1.7; }
+
+    .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .stag { font-size: 0.72rem; background: var(--cream); color: var(--forest-light); border: 1px solid var(--border); padding: 0.2rem 0.65rem; border-radius: 50px; }
+
+    /* ── EXPERIENCE ──────────────────────────────────────────── */
+    #experience { background: var(--white); }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .exp-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .exp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--shadow-md); }
+    .exp-card.featured {
+      border-color: var(--mint-deep);
+      background: linear-gradient(135deg, var(--white) 60%, rgba(219,234,230,0.3) 100%);
+    }
+
+    .exp-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .badge-current { background: #d4edd8; color: #2D6A4F; }
+    .badge-past    { background: var(--cream); color: var(--forest-light); border: 1px solid var(--border); }
+
+    .exp-date { font-size: 0.82rem; color: var(--sage-dark); font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .exp-date::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--sage-dark); }
+
+    .exp-card h3 { font-size: 1.1rem; color: var(--forest); margin-bottom: 0.3rem; font-family: 'Inter', sans-serif; font-weight: 700; }
+    .exp-company { font-size: 0.875rem; color: var(--mid-gray); margin-bottom: 1rem; font-weight: 500; }
+
+    .exp-list { list-style: none; padding: 0; }
+    .exp-list li { font-size: 0.875rem; color: #555550; line-height: 1.7; padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; }
+    .exp-list li::before { content: '→'; position: absolute; left: 0; color: var(--sage-dark); font-size: 0.8rem; }
+
+    /* ── SKILLS ──────────────────────────────────────────────── */
+    #skills { background: var(--cream); }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .core-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+
+    .skill-pill {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--forest);
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .skill-pill:hover { border-color: var(--sage-dark); background: var(--mint); transform: translateX(4px); }
+    .skill-pill .sp-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    .tools-section h3 { font-size: 1rem; font-weight: 700; color: var(--forest); font-family: 'Inter', sans-serif; margin-bottom: 1.25rem; }
+    .tools-category { margin-bottom: 1.75rem; }
+    .tools-category-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage-dark); margin-bottom: 0.75rem; }
+    .tools-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .tool-tag {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--forest-light);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .tool-tag:hover { background: var(--forest); color: var(--white); border-color: var(--forest); transform: translateY(-2px); }
+
+    /* ── EDUCATION ───────────────────────────────────────────── */
+    #education { background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
+
+    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+
+    .edu-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .edu-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px var(--shadow-md); }
+
+    .edu-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+    .edu-icon.deg  { background: var(--mint); }
+    .edu-icon.cert { background: #f0ece0; }
+    .edu-icon.hs   { background: #e6ede3; }
+
+    .edu-date { font-size: 0.78rem; font-weight: 600; color: var(--sage-dark); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+    .edu-card h3 { font-size: 1rem; color: var(--forest); font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 0.25rem; }
+    .edu-school { font-size: 0.875rem; color: var(--mid-gray); margin-bottom: 0.75rem; }
+    .edu-awards { list-style: none; padding: 0; }
+    .edu-awards li { font-size: 0.8rem; color: #666660; padding: 0.25rem 0; display: flex; align-items: center; gap: 0.5rem; }
+    .edu-awards li::before { content: '🏆'; font-size: 0.7rem; }
+
+    /* ── CONTACT ─────────────────────────────────────────────── */
+    #contact {
+      background: linear-gradient(135deg, var(--forest) 0%, #1a2118 100%);
+      padding: 90px 2rem;
+    }
+
+    #contact .section-label { color: var(--sage); }
+    #contact .section-title { color: var(--white); }
+    #contact .divider { background: linear-gradient(90deg, var(--sage), rgba(178,181,165,0.3)); }
+    #contact .section-desc { color: rgba(255,255,255,0.6); }
+
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 1rem; }
+
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; padding: 1.25rem; background: rgba(255,255,255,0.05); border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.08); transition: background var(--transition); }
+    .contact-item:hover { background: rgba(255,255,255,0.09); }
+
+    .ci-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(178,181,165,0.18); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .ci-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 0.2rem; }
+    .ci-value { font-size: 0.925rem; color: rgba(255,255,255,0.9); font-weight: 500; }
+    .ci-value a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .ci-value a:hover { color: var(--sage); }
+
+    .contact-form-wrap { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2.5rem; }
+    .contact-form-wrap h3 { font-size: 1.2rem; color: var(--white); margin-bottom: 1.5rem; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 0.85rem 1rem; color: var(--white); font-size: 0.925rem; font-family: 'Inter', sans-serif; outline: none; transition: border-color var(--transition), background var(--transition); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.28); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sage); background: rgba(255,255,255,0.1); }
+    .form-group select option { background: #2c3525; color: var(--white); }
+    .form-group textarea { min-height: 110px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .btn-submit { width: 100%; background: var(--sage-dark); color: var(--white); border: none; border-radius: 50px; padding: 1rem; font-size: 1rem; font-weight: 700; font-family: 'Inter', sans-serif; cursor: pointer; transition: background var(--transition), transform var(--transition), box-shadow var(--transition); display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.5rem; }
+    .btn-submit:hover { background: var(--forest-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,53,37,0.35); }
+
+    .form-success { display: none; text-align: center; padding: 1rem; color: #90d4a8; font-size: 0.9rem; font-weight: 500; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer { background: #141a10; padding: 2.5rem 2rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.6); }
+    .footer-logo span { color: var(--sage); }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); transition: color var(--transition); }
+    .footer-links a:hover { color: var(--sage); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-visual { order: -1; }
+      .hero-card { max-width: 280px; }
+      .tag-1 { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .edu-grid { grid-template-columns: 1fr 1fr; }
+      .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-mobile-open .nav-links { display: flex; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--cream); padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); gap: 1.25rem; box-shadow: 0 8px 24px var(--shadow); }
+      section { padding: 60px 1.25rem; }
+      #home { padding: 90px 1.25rem 50px; }
+      .hero-buttons { flex-direction: column; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+      .services-grid { grid-template-columns: 1fr; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .value-cards { grid-template-columns: 1fr; }
+      .core-skills-grid { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 1.75rem 1.25rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────── -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">Mary Ann <span>Menes</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">Available for Work</div>
+        <h1>Hi, I'm <span class="highlight">Mary Ann</span> Menes</h1>
+        <div class="hero-subtitle">
+          <span>Executive Assistant</span>
+          <span class="sep">|</span>
+          <span>Creative Support</span>
+          <span class="sep">|</span>
+          <span>Property Manager</span>
+        </div>
+        <p class="hero-desc">
+          A results-driven Virtual Assistant who delivers high-level administrative, creative, and operational support — helping businesses run smoothly and grow.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">✉ Let's Work Together</a>
+          <a href="#experience" class="btn-secondary">View My Work →</a>
+        </div>
+        <div class="hero-socials">
+          <span>Find me on</span>
+          <a href="https://www.linkedin.com/in/mary-ann-menes" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="mailto:ann@newlifecapitalpartners.com" class="social-link" title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+
+          <img src="photo.JPG" alt="Mary Ann Menes" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 1.25rem;display:block;border:3px solid var(--mint-deep);" />
+
+          <h3>Mary Ann Menes</h3>
+          <p>Executive VA & Operations Specialist</p>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-num">4+</div>
+              <div class="stat-label">Years Exp.</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">6</div>
+              <div class="stat-label">Core Skills</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">14+</div>
+              <div class="stat-label">Tools</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-tag tag-1">
+          <div class="dot" style="background:#5a9a60"></div>
+          Open to Opportunities
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ──────────────────────────────────────────── -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid reveal">
+        <div class="about-visual">
+          <div class="about-bg-card">
+
+            <img src="photo.JPG" alt="Mary Ann Menes" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:1.5rem;display:block;border:2px solid var(--sage-dark);" />
+
+            <h3>Mary Ann Menes</h3>
+            <p>Executive VA · Creative Support · Property Manager</p>
+            <div class="about-detail-item">
+              <div class="icon-circle">🌏</div>
+              <span>Based in the Philippines</span>
+            </div>
+            <div class="about-detail-item">
+              <div class="icon-circle">🗣</div>
+              <span>English & Filipino</span>
+            </div>
+            <div class="about-detail-item">
+              <div class="icon-circle">🕒</div>
+              <span>Open to Remote & Flexible Hours</span>
+            </div>
+            <div class="about-detail-item">
+              <div class="icon-circle">🎓</div>
+              <span>B.S. Public Administration — Cum Laude</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">About Me</div>
+          <div class="divider"></div>
+          <h2 class="section-title">Reliable. Detail-Oriented.<br/>Always One Step Ahead.</h2>
+          <p class="section-desc">
+            I'm Mary Ann — an Executive and Operations Virtual Assistant who brings calm, clarity, and momentum to busy professionals and growing businesses. Whether it's managing complex calendars, streamlining workflows with automation, overseeing property operations, or crafting compelling social content — I'm here to make your operations frictionless.
+          </p>
+          <div class="value-cards">
+            <div class="value-card">
+              <div class="vc-icon">⚡</div>
+              <h4>Fast & Reliable</h4>
+              <p>Responsive, proactive, and consistent — you can count on me.</p>
+            </div>
+            <div class="value-card">
+              <div class="vc-icon">🔧</div>
+              <h4>Systems Thinker</h4>
+              <p>I don't just complete tasks — I build processes that last.</p>
+            </div>
+            <div class="value-card">
+              <div class="vc-icon">🎨</div>
+              <h4>Creative Edge</h4>
+              <p>From Canva designs to social strategy, I bring visual polish.</p>
+            </div>
+            <div class="value-card">
+              <div class="vc-icon">📊</div>
+              <h4>Detail-Driven</h4>
+              <p>Accuracy matters. I track every detail so nothing slips through.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ───────────────────────────────────────── -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="services-header reveal">
+        <div class="left">
+          <div class="section-label">What I Offer</div>
+          <div class="divider"></div>
+          <h2 class="section-title">Services Tailored<br/>to Your Business</h2>
+        </div>
+        <a href="#contact" class="btn-primary" style="flex-shrink:0;">Get Started →</a>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-icon">🗂</div>
+          <h3>Executive &amp; Operations Assistance</h3>
+          <p>High-level support for busy executives — calendar management, email handling, meeting prep, strategic research, and seamless day-to-day operations.</p>
+          <div class="service-tags">
+            <span class="stag">Calendar Mgmt</span>
+            <span class="stag">Email Triage</span>
+            <span class="stag">Research</span>
+            <span class="stag">Reporting</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🏠</div>
+          <h3>Property Management Support</h3>
+          <p>End-to-end residential property operations — tenant and developer communication, financial tracking, compliance, and policy implementation.</p>
+          <div class="service-tags">
+            <span class="stag">Tenant Comms</span>
+            <span class="stag">Financial Tracking</span>
+            <span class="stag">Buildium</span>
+            <span class="stag">Compliance</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">📱</div>
+          <h3>Social Media &amp; Digital Marketing</h3>
+          <p>Strategy, content creation, scheduling, and analytics — keeping your brand visible and engaging across platforms.</p>
+          <div class="service-tags">
+            <span class="stag">Content Creation</span>
+            <span class="stag">Canva</span>
+            <span class="stag">Buffer</span>
+            <span class="stag">Meta Suite</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">⚙️</div>
+          <h3>Workflow &amp; Automation</h3>
+          <p>Eliminating repetitive tasks with smart automations using Zapier and other tools, so your team can focus on what matters most.</p>
+          <div class="service-tags">
+            <span class="stag">Zapier</span>
+            <span class="stag">Google Workspace</span>
+            <span class="stag">Process Design</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🎨</div>
+          <h3>Creative &amp; Visual Design</h3>
+          <p>Polished visual content — graphics, presentations, and branded materials that communicate your message with impact.</p>
+          <div class="service-tags">
+            <span class="stag">Canva</span>
+            <span class="stag">Adobe</span>
+            <span class="stag">Presentations</span>
+            <span class="stag">Brand Assets</span>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🤝</div>
+          <h3>Customer Service &amp; Communication</h3>
+          <p>Professional, warm, and solution-focused communication with clients, stakeholders, and teams to keep relationships strong.</p>
+          <div class="service-tags">
+            <span class="stag">CRM Support</span>
+            <span class="stag">Stakeholder Mgmt</span>
+            <span class="stag">Slack</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ─────────────────────────────────────── -->
+  <section id="experience">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-label">Work History</div>
+        <div class="divider"></div>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-desc">Hands-on experience across executive support, property management, and business operations.</p>
+      </div>
+      <div class="exp-grid">
+
+        <div class="exp-card featured reveal">
+          <span class="exp-badge badge-current">Most Recent</span>
+          <div class="exp-date">Feb 2025 – April 2026</div>
+          <h3>Virtual Executive Assistant</h3>
+          <p class="exp-company">Freelance · Real Estate Industry</p>
+          <ul class="exp-list">
+            <li>Closely assisted the Executive in managing calendars and appointments, ensuring zero scheduling conflicts.</li>
+            <li>Built and maintained system automations to reduce manual work and improve team efficiency.</li>
+            <li>Organized data records and provided strategic research support for business planning.</li>
+            <li>Managed social media and marketing content to grow online presence.</li>
+            <li>Handled ad-hoc administrative requests to keep real estate operations running smoothly.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card reveal">
+          <span class="exp-badge badge-past">Previous Role</span>
+          <div class="exp-date">Oct 2022 – Feb 2025</div>
+          <h3>Property Manager</h3>
+          <p class="exp-company">Globalland Property Management Inc.</p>
+          <ul class="exp-list">
+            <li>Oversaw all day-to-day operations of a residential property portfolio.</li>
+            <li>Managed developer and client communications, maintaining strong stakeholder relationships.</li>
+            <li>Handled financial tracking, budgeting, and compliance with local regulations.</li>
+            <li>Implemented and enforced property policies to uphold operational standards.</li>
+            <li>Ensured smooth, efficient operations that met the needs of all parties involved.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ─────────────────────────────────────────── -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-label">Expertise</div>
+        <div class="divider"></div>
+        <h2 class="section-title">Skills &amp; Tools</h2>
+        <p class="section-desc">A versatile skill set built through real-world experience, continuous learning, and a passion for organisation and efficiency.</p>
+      </div>
+      <div class="skills-layout">
+
+        <div class="reveal">
+          <h3 style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--forest);margin-bottom:1.25rem;">Core Competencies</h3>
+          <div class="core-skills-grid">
+            <div class="skill-pill"><span class="sp-icon">🗂</span> Ops &amp; Executive Assistance</div>
+            <div class="skill-pill"><span class="sp-icon">🏠</span> Property Management</div>
+            <div class="skill-pill"><span class="sp-icon">😊</span> Customer Service</div>
+            <div class="skill-pill"><span class="sp-icon">📱</span> Social Media Management</div>
+            <div class="skill-pill"><span class="sp-icon">🎨</span> Digital Marketing &amp; Design</div>
+            <div class="skill-pill"><span class="sp-icon">⚙️</span> Workflow &amp; Automations</div>
+          </div>
+        </div>
+
+        <div class="tools-section reveal">
+          <h3>Tools &amp; Systems</h3>
+
+          <div class="tools-category">
+            <div class="tools-category-label">Productivity &amp; Communication</div>
+            <div class="tools-row">
+              <span class="tool-tag">Microsoft Office Suite</span>
+              <span class="tool-tag">Google Workspace</span>
+              <span class="tool-tag">Google Admin Console</span>
+              <span class="tool-tag">Evernote</span>
+              <span class="tool-tag">Slack</span>
+            </div>
+          </div>
+
+          <div class="tools-category">
+            <div class="tools-category-label">Marketing &amp; Creative</div>
+            <div class="tools-row">
+              <span class="tool-tag">Canva</span>
+              <span class="tool-tag">Adobe</span>
+              <span class="tool-tag">Buffer</span>
+              <span class="tool-tag">Meta Business Suite</span>
+              <span class="tool-tag">WordPress</span>
+            </div>
+          </div>
+
+          <div class="tools-category">
+            <div class="tools-category-label">AI &amp; Automation</div>
+            <div class="tools-row">
+              <span class="tool-tag">Claude AI</span>
+              <span class="tool-tag">OpenAI</span>
+              <span class="tool-tag">Zapier</span>
+            </div>
+          </div>
+
+          <div class="tools-category">
+            <div class="tools-category-label">Property &amp; Development</div>
+            <div class="tools-row">
+              <span class="tool-tag">Buildium</span>
+              <span class="tool-tag">Github</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ──────────────────────────────────────── -->
+  <section id="education">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-label">Background</div>
+        <div class="divider"></div>
+        <h2 class="section-title">Education &amp; Training</h2>
+        <p class="section-desc">A strong academic foundation paired with practical certifications and professional training.</p>
+      </div>
+      <div class="edu-grid">
+
+        <div class="edu-card reveal">
+          <div class="edu-icon deg">🎓</div>
+          <div class="edu-date">April 2018 – July 2022</div>
+          <h3>Bachelor in Public Administration</h3>
+          <p class="edu-school">Romblon State University · Odiongan, Romblon</p>
+          <ul class="edu-awards">
+            <li>Academic Excellence Award — Cum Laude</li>
+            <li>Best Research Awardee</li>
+            <li>Student Leader Awardee</li>
+            <li>Internship · CSC Romblon Field Office</li>
+          </ul>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon hs">🏫</div>
+          <div class="edu-date">April 2012 – December 2016</div>
+          <h3>Junior &amp; Senior High School</h3>
+          <p class="edu-school">Sisters of Mary of Banneux, Inc. · Silang, Cavite</p>
+          <ul class="edu-awards">
+            <li>Full Academic Scholarship</li>
+          </ul>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-icon cert">📜</div>
+          <div class="edu-date">Certifications</div>
+          <h3>Professional Certifications</h3>
+          <p class="edu-school">Technical &amp; Vocational Training</p>
+          <ul class="edu-awards">
+            <li>Typing I / PC Operations I–IV (335 hours)</li>
+            <li>Bookkeeping / Office Procedures (200 hours)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-label">Get In Touch</div>
+        <div class="divider"></div>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-desc">Ready to streamline your operations and take your business to the next level? I'd love to hear about your needs.</p>
+      </div>
+      <div class="contact-layout reveal">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value"><a href="mailto:ann@newlifecapitalpartners.com">ann@newlifecapitalpartners.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">💼</div>
+            <div>
+              <div class="ci-label">LinkedIn</div>
+              <div class="ci-value"><a href="https://www.linkedin.com/in/mary-ann-menes" target="_blank" rel="noopener">linkedin.com/in/mary-ann-menes</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">🌐</div>
+            <div>
+              <div class="ci-label">Current Portfolio</div>
+              <div class="ci-value"><a href="https://sites.google.com/view/vamaryannmenes" target="_blank" rel="noopener">sites.google.com/view/vamaryannmenes</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">🕒</div>
+            <div>
+              <div class="ci-label">Availability</div>
+              <div class="ci-value">Open to Remote Full-Time &amp; Freelance</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h3>Send Me a Message</h3>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="Jane" required />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="jane@company.com" required />
+            </div>
+            <div class="form-group">
+              <label>I'm Interested In</label>
+              <select>
+                <option value="">Select a service...</option>
+                <option>Executive & Operations Assistance</option>
+                <option>Property Management Support</option>
+                <option>Social Media & Digital Marketing</option>
+                <option>Workflow & Automation</option>
+                <option>Creative & Visual Design</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell me about your project or needs..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">✉ Send Message</button>
+            <div class="form-success" id="formSuccess">✅ Message sent! I'll be in touch soon.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Mary Ann <span>Menes</span></div>
+      <div class="footer-copy">© 2026 Mary Ann Menes · All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ────────────────────────────────────────── -->
+  <script>
+    // Sticky nav shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    hamburger.addEventListener('click', () => navbar.classList.toggle('nav-mobile-open'));
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navbar.classList.remove('nav-mobile-open'));
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Contact form
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('formSuccess').style.display = 'block';
+        btn.textContent = '✉ Send Message';
+        btn.disabled = false;
+        e.target.reset();
+      }, 1200);
+    }
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--forest)' : '';
+      });
+    });
+
+    // Photo preview — hero card
+    function previewPhoto(input, previewId, innerId) {
+      const file = input.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        const preview = document.getElementById(previewId);
+        const inner  = document.getElementById(innerId);
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+        inner.style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Photo preview — about card
+    function previewAboutPhoto(input) {
+      const file = input.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        const preview = document.getElementById('aboutPhotoPreview');
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+        input.previousElementSibling.style.opacity = '0';
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+</html>

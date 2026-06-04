@@ -801,6 +801,102 @@
 
     .form-success { display: none; text-align: center; padding: 1rem; color: #90d4a8; font-size: 0.9rem; font-weight: 500; }
 
+    /* ── GALLERY ─────────────────────────────────────────────── */
+    .gfilter {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      color: var(--forest-light);
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all var(--transition);
+    }
+    .gfilter:hover, .gfilter.active {
+      background: var(--forest);
+      color: var(--white);
+      border-color: var(--forest);
+    }
+
+    .gallery-grid {
+      columns: 3;
+      column-gap: 1.25rem;
+    }
+    @media (max-width: 900px) { .gallery-grid { columns: 2; } }
+    @media (max-width: 500px) { .gallery-grid { columns: 1; } }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1.25rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    .gallery-placeholder {
+      width: 100%;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--mint) 0%, var(--cream) 100%);
+      color: var(--sage-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(44,53,37,0.88) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 1.1rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    .gallery-cat-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: var(--sage-dark);
+      color: #fff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      margin-bottom: 0.35rem;
+    }
+    .gallery-info h4 {
+      font-size: 0.9rem;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .gallery-zoom {
+      font-size: 1.4rem;
+      align-self: flex-end;
+      margin-bottom: 0.1rem;
+    }
+
+    .gallery-item.hidden { display: none; }
+
     /* ── FOOTER ──────────────────────────────────────────────── */
     footer { background: #141a10; padding: 2.5rem 2rem; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
@@ -854,6 +950,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">My Work</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact" class="nav-cta">Hire Me</a></li>
@@ -1118,16 +1215,89 @@
 
       <!-- Work & Reviews Buttons -->
       <div class="reveal" style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;">
-        <a href="https://sites.google.com/view/vamaryannmenes/selected-work" target="_blank" rel="noopener" class="btn-primary">
-          🗂 View Selected Work
-        </a>
-        <a href="https://sites.google.com/view/vamaryannmenes/reviews" target="_blank" rel="noopener" class="btn-secondary">
-          ⭐ Read Client Reviews
-        </a>
+        <a href="selected-work.html" class="btn-primary">🗂 View Selected Work</a>
+        <a href="reviews.html" class="btn-secondary">⭐ Read Client Reviews</a>
       </div>
 
     </div>
   </section>
+
+  <!-- ── SELECTED WORK GALLERY ────────────────────────────── -->
+  <section id="work" style="background:linear-gradient(180deg,var(--cream) 0%,var(--white) 100%);">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-label">Portfolio</div>
+        <div class="divider"></div>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-desc">A glimpse into the work I've delivered — from creative marketing materials to organised systems and operations.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="gallery-filters reveal" style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2rem;">
+        <button class="gfilter active" data-filter="all">All Work</button>
+        <button class="gfilter" data-filter="flyer">Flyers & Graphics</button>
+        <button class="gfilter" data-filter="social">Social Media</button>
+        <button class="gfilter" data-filter="doc">Documents & Reports</button>
+        <button class="gfilter" data-filter="other">Other</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- PLACEHOLDERS — replace src with your actual image files -->
+        <div class="gallery-item reveal" data-cat="flyer" data-title="Marketing Flyer" data-desc="Promotional flyer designed for a real estate campaign">
+          <img src="work1.jpg" alt="Marketing Flyer" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
+          <div class="gallery-placeholder" style="display:none"><span>📁 work1.jpg</span></div>
+          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Flyers & Graphics</span><h4>Marketing Flyer</h4></div><div class="gallery-zoom">🔍</div></div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="social" data-title="Social Media Post" data-desc="Branded content created for Facebook and Instagram">
+          <img src="work2.jpg" alt="Social Media Post" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
+          <div class="gallery-placeholder" style="display:none"><span>📁 work2.jpg</span></div>
+          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Social Media</span><h4>Social Media Post</h4></div><div class="gallery-zoom">🔍</div></div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="flyer" data-title="Event Flyer" data-desc="Creative event flyer with branded visuals">
+          <img src="work3.jpg" alt="Event Flyer" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
+          <div class="gallery-placeholder" style="display:none"><span>📁 work3.jpg</span></div>
+          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Flyers & Graphics</span><h4>Event Flyer</h4></div><div class="gallery-zoom">🔍</div></div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="doc" data-title="Report Template" data-desc="Professional document template for business reporting">
+          <img src="work4.jpg" alt="Report Template" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
+          <div class="gallery-placeholder" style="display:none"><span>📁 work4.jpg</span></div>
+          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Documents</span><h4>Report Template</h4></div><div class="gallery-zoom">🔍</div></div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="social" data-title="Instagram Content" data-desc="Engaging social content for brand growth">
+          <img src="work5.jpg" alt="Instagram Content" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
+          <div class="gallery-placeholder" style="display:none"><span>📁 work5.jpg</span></div>
+          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Social Media</span><h4>Instagram Content</h4></div><div class="gallery-zoom">🔍</div></div>
+        </div>
+
+        <div class="gallery-item reveal" data-cat="other" data-title="Calendar & System" data-desc="Organised scheduling and workflow system setup">
+          <img src="work6.jpg" alt="Calendar & System" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
+          <div class="gallery-placeholder" style="display:none"><span>📁 work6.jpg</span></div>
+          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Other</span><h4>Calendar & System</h4></div><div class="gallery-zoom">🔍</div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column;padding:2rem;">
+    <button onclick="closeLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;">✕</button>
+    <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:75vh;border-radius:12px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.5);" />
+    <div style="text-align:center;margin-top:1.25rem;">
+      <h3 id="lightboxTitle" style="color:#fff;font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:0.4rem;"></h3>
+      <p id="lightboxDesc" style="color:rgba(255,255,255,0.6);font-size:0.9rem;"></p>
+    </div>
+    <div style="display:flex;gap:1.5rem;margin-top:1.5rem;">
+      <button onclick="lightboxNav(-1)" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.6rem 1.5rem;border-radius:50px;cursor:pointer;font-size:0.9rem;">← Prev</button>
+      <button onclick="lightboxNav(1)" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.6rem 1.5rem;border-radius:50px;cursor:pointer;font-size:0.9rem;">Next →</button>
+    </div>
+  </div>
 
   <!-- ── SKILLS ─────────────────────────────────────────── -->
   <section id="skills">
@@ -1411,6 +1581,62 @@
       };
       reader.readAsDataURL(file);
     }
+
+    // Gallery filter
+    document.querySelectorAll('.gfilter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.gfilter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          item.classList.toggle('hidden', filter !== 'all' && item.dataset.cat !== filter);
+        });
+      });
+    });
+
+    // Gallery click → lightbox
+    let currentItems = [];
+    let currentIndex = 0;
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        currentItems = [...document.querySelectorAll('.gallery-item:not(.hidden)')];
+        currentIndex = currentItems.indexOf(item);
+        openLightbox(item);
+      });
+    });
+
+    function openLightbox(item) {
+      const lb = document.getElementById('lightbox');
+      const img = item.querySelector('img');
+      document.getElementById('lightboxImg').src = img && img.style.display !== 'none' ? img.src : '';
+      document.getElementById('lightboxTitle').textContent = item.dataset.title;
+      document.getElementById('lightboxDesc').textContent = item.dataset.desc;
+      lb.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function lightboxNav(dir) {
+      currentIndex = (currentIndex + dir + currentItems.length) % currentItems.length;
+      openLightbox(currentItems[currentIndex]);
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (document.getElementById('lightbox').style.display === 'flex') {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') lightboxNav(1);
+        if (e.key === 'ArrowLeft') lightboxNav(-1);
+      }
+    });
 
     // Photo preview — about card
     function previewAboutPhoto(input) {

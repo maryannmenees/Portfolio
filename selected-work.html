@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selected Work | Mary Ann Menes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff; --mint: #dbeae6; --mint-deep: #bdd5cf;
+      --sage: #b2b5a5; --sage-mid: #8a8e7e; --sage-dark: #6b6e60;
+      --cream: #f2f5ef; --forest: #2c3525; --forest-light: #4a5840;
+      --charcoal: #333330; --mid-gray: #737068; --border: #cdd5c6;
+      --shadow: rgba(44,53,37,0.07); --shadow-md: rgba(44,53,37,0.13);
+      --radius: 14px; --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(242,245,239,0.95); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 16px var(--shadow);
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--forest); }
+    .nav-logo span { color: var(--sage-dark); }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--forest); color: var(--white);
+      padding: 0.5rem 1.2rem; border-radius: 50px;
+      font-size: 0.85rem; font-weight: 600;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .back-btn:hover { background: var(--forest-light); transform: translateY(-1px); }
+
+    /* HERO */
+    .page-hero {
+      background: linear-gradient(135deg, var(--forest) 0%, #1a2118 100%);
+      padding: 70px 2rem 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(178,181,165,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--sage); margin-bottom: 0.75rem; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); color: var(--white); margin-bottom: 1rem; }
+    .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto; }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--sage-dark); }
+    .stat-lbl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mid-gray); }
+
+    /* FILTERS */
+    .filters-wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 0; }
+    .filters { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .fbtn {
+      background: var(--white); border: 1.5px solid var(--border);
+      color: var(--forest-light); padding: 0.45rem 1.2rem;
+      border-radius: 50px; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: all var(--transition);
+    }
+    .fbtn:hover, .fbtn.active { background: var(--forest); color: var(--white); border-color: var(--forest); }
+
+    /* GALLERY */
+    .gallery-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 5rem; }
+    .masonry { columns: 3; column-gap: 1.25rem; }
+    @media (max-width: 900px) { .masonry { columns: 2; } }
+    @media (max-width: 500px) { .masonry { columns: 1; } }
+
+    .gcard {
+      break-inside: avoid; margin-bottom: 1.25rem;
+      border-radius: var(--radius); overflow: hidden;
+      position: relative; cursor: pointer;
+      background: var(--white); border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .gcard:hover { transform: translateY(-5px); box-shadow: 0 16px 40px var(--shadow-md); }
+    .gcard img { width: 100%; display: block; transition: transform 0.4s ease; }
+    .gcard:hover img { transform: scale(1.03); }
+
+    .gcard-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(44,53,37,0.9) 0%, rgba(44,53,37,0.1) 55%, transparent 100%);
+      opacity: 0; transition: opacity 0.35s ease;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1.25rem;
+    }
+    .gcard:hover .gcard-overlay { opacity: 1; }
+    .gcard-cat {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; background: var(--sage-dark); color: #fff;
+      padding: 0.2rem 0.65rem; border-radius: 50px; display: inline-block;
+      margin-bottom: 0.4rem; width: fit-content;
+    }
+    .gcard-title { font-size: 0.95rem; color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .gcard-desc { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin-top: 0.2rem; }
+    .zoom-icon { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.18); backdrop-filter: blur(8px); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; opacity: 0; transition: opacity 0.3s; }
+    .gcard:hover .zoom-icon { opacity: 1; }
+    .gcard.hidden { display: none; }
+
+    /* LIGHTBOX */
+    #lb {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.93); z-index: 9999;
+      align-items: center; justify-content: center;
+      flex-direction: column; padding: 2rem;
+    }
+    #lb.open { display: flex; }
+    #lb-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; width: 44px; height: 44px; border-radius: 50%;
+      font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    #lb-close:hover { background: rgba(255,255,255,0.2); }
+    #lb-img { max-width: 88vw; max-height: 72vh; border-radius: 12px; object-fit: contain; box-shadow: 0 24px 80px rgba(0,0,0,0.6); }
+    #lb-info { text-align: center; margin-top: 1.25rem; }
+    #lb-cat { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: var(--sage-dark); color: #fff; padding: 0.2rem 0.75rem; border-radius: 50px; display: inline-block; margin-bottom: 0.5rem; }
+    #lb-title { color: #fff; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 0.3rem; }
+    #lb-desc { color: rgba(255,255,255,0.55); font-size: 0.875rem; }
+    .lb-nav { display: flex; gap: 1rem; margin-top: 1.5rem; }
+    .lb-btn {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; padding: 0.6rem 1.75rem; border-radius: 50px;
+      cursor: pointer; font-size: 0.875rem; font-weight: 600;
+      font-family: 'Inter', sans-serif; transition: background 0.2s;
+    }
+    .lb-btn:hover { background: rgba(255,255,255,0.2); }
+    #lb-counter { color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-top: 0.75rem; }
+
+    /* CTA */
+    .cta-bar {
+      background: linear-gradient(135deg, var(--forest) 0%, #1a2118 100%);
+      text-align: center; padding: 60px 2rem;
+    }
+    .cta-bar h2 { font-size: 1.8rem; color: var(--white); margin-bottom: 0.75rem; }
+    .cta-bar p { color: rgba(255,255,255,0.6); margin-bottom: 1.75rem; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--sage-dark); color: #fff;
+      padding: 0.9rem 2rem; border-radius: 50px;
+      font-weight: 700; font-size: 0.95rem;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .cta-btn:hover { background: var(--forest-light); transform: translateY(-2px); }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Mary Ann <span>Menes</span></a>
+    <a href="index.html" class="back-btn">← Back to Portfolio</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="hero-label">Portfolio</div>
+    <h1>Selected Work</h1>
+    <p>A curated showcase of projects across web design, social media, marketing, and operations.</p>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">8</div><div class="stat-lbl">Projects</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-lbl">Categories</div></div>
+    <div class="stat-item"><div class="stat-num">4+</div><div class="stat-lbl">Years Experience</div></div>
+  </div>
+
+  <div class="filters-wrap">
+    <div class="filters reveal">
+      <button class="fbtn active" data-filter="all">✦ All Work</button>
+      <button class="fbtn" data-filter="web">🌐 Web Design</button>
+      <button class="fbtn" data-filter="social">📱 Social Media</button>
+      <button class="fbtn" data-filter="marketing">🎨 Marketing & Branding</button>
+      <button class="fbtn" data-filter="ops">📅 Operations</button>
+    </div>
+  </div>
+
+  <div class="gallery-wrap">
+    <div class="masonry" id="grid">
+
+      <div class="gcard reveal" data-cat="web" data-title="New Life Capital Partners" data-desc="Full website design & development for a real estate investment firm." data-src="SELECTED WORK/1.png">
+        <img src="SELECTED WORK/1.png" alt="New Life Capital Partners Website" loading="lazy" />
+        <div class="gcard-overlay">
+          <span class="gcard-cat">Web Design</span>
+          <div class="gcard-title">New Life Capital Partners</div>
+          <div class="gcard-desc">Website design & development · newlifecapitalpartners.com</div>
+        </div>
+        <div class="zoom-icon">🔍</div>
+      </div>
+
+      <div class="gcard reveal" data-cat="web" data-title="High Hopes Home Buyers" data-desc="Real estate buyer website — fast cash offer landing page design." data-src="SELECTED WORK/2.png">
+        <img src="SELECTED WORK/2.png" alt="High Hopes Home Buyers Website" loading="lazy" />
+        <div class="gcard-overlay">
+          <span class="gcard-cat">Web Design</span>
+          <div class="gcard-title">High Hopes Home Buyers</div>
+          <div class="gcard-desc">Website design & development · highhopeshomebuyeys.com</div>
+        </div>
+        <div class="zoom-icon">🔍</div>
+      </div>
+
+      <div class="gcard reveal" data-cat="web" data-title="Newera Property Management" data-desc="Modern property management website with listings and tenant portal." data-src="SELECTED WORK/3.png">
+        <img src="SELECTED WORK/3.png" alt="Newera Property Management Website" loading="lazy" />
+        <div class="gcard-overlay">
+          <span class="gcard-cat">Web Design</span>
+          <div class="gcard-title">Newera Property Management</div>
+          <div class="gcard-desc">Website design & development · newerapm.com</div>
+        </div>
+        <div class="zoom-icon">🔍</div>
+      </div>
+
+      <div class="gcard reveal" data-cat="social" data-title="Social Media Management" data-desc="Content scheduling, channel management, and analytics using Buffer." data-src="SELECTED WORK/4.png">
+        <img src="SELECTED WORK/4.png" alt="Social Media Management" loading="lazy" />
+        <div class="gcard-overlay">
+          <span class="gcard-cat">Social Media</span>
+          <div class="gcard-title">Social Media Management</div>
+          <div class="gcard-desc">Multi-platform content strategy & scheduling via Buffer</div>
+        </div>
+        <div class="zoom-icon">🔍</div>
+      </div>
+
+      <div class="gcard reveal" data-cat="marketing" data-title="Marketing Materials & Assets" data-desc="Business cards, brochures, and branded print materials." data-src="SELECTED WORK/5.png">
+        <img src="SELECTED WORK/5.png" alt="Marketing Materials" loading="lazy" />
+        <div class="gcard-overlay">
+          <span class="gcard-cat">Marketing</span>
+          <div class="gcard-title">Marketing Materials & Assets</div>
+          <div class="gcard-desc">Business cards, brochures & branded print collateral</div>
+        </div>
+        <div class="zoom-icon">🔍</div>
+      </div>
+
+      <div class="gcard reveal" data-cat="ops" data-title="Calendar & Inbox Management" data-desc="Executive calendar setup with time zone management and inbox organisation." data-src="SELECTED WORK/6.png">
+        <img src="SELECTED WORK/6.png" alt="Calendar Management" loading="lazy" />
+        <div class="gcard-overlay">
+          <span class="gcard-cat">Operations</span>
+          <div class="gcard-title">Calendar & Inbox Management</div>
+          <div class="gcard-desc">Executive scheduling, time zone coordination & inbox triage</div>
+        </div>
+        <div class="zoom-icon">🔍</div>
+      </div>
+
+      <div class="gcard reveal" data-cat="ops" data-title="Inbox & Schedule Workflow" data-desc="Streamlined email workflow and calendar optimisation for an executive." data-src="SELECTED WORK/7.png">
+        <img src="SELECTED WORK/7.png" alt="Inbox Workflow" loading="lazy" />
+        <div class="gcard-overlay">
+          <span class="gcard-cat">Operations</span>
+          <div class="gcard-title">Inbox & Schedule Workflow</div>
+          <div class="gcard-desc">Email triage, event scheduling & operational organisation</div>
+        </div>
+        <div class="zoom-icon">🔍</div>
+      </div>
+
+      <div class="gcard reveal" data-cat="marketing" data-title="Brand Tone & Business Assets" data-desc="Brand voice documentation and visual identity assets for Newera." data-src="SELECTED WORK/8.png">
+        <img src="SELECTED WORK/8.png" alt="Branding and Business Assets" loading="lazy" />
+        <div class="gcard-overlay">
+          <span class="gcard-cat">Branding</span>
+          <div class="gcard-title">Brand Tone & Business Assets</div>
+          <div class="gcard-desc">Brand guidelines, tone of voice & visual identity — Newera</div>
+        </div>
+        <div class="zoom-icon">🔍</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lb">
+    <button id="lb-close" onclick="closeLb()">✕</button>
+    <img id="lb-img" src="" alt="" />
+    <div id="lb-info">
+      <div id="lb-cat"></div>
+      <div id="lb-title"></div>
+      <div id="lb-desc"></div>
+    </div>
+    <div class="lb-nav">
+      <button class="lb-btn" onclick="lbNav(-1)">← Prev</button>
+      <button class="lb-btn" onclick="lbNav(1)">Next →</button>
+    </div>
+    <div id="lb-counter"></div>
+  </div>
+
+  <div class="cta-bar">
+    <h2>Like What You See?</h2>
+    <p>Let's talk about what I can do for your business.</p>
+    <a href="https://calendar.app.google/SZrhR6Z2s1U93KG87" target="_blank" class="cta-btn">📅 Book a Free Call</a>
+  </div>
+
+  <script>
+    // Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*60); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Filter
+    document.querySelectorAll('.fbtn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.gcard').forEach(card => {
+          card.classList.toggle('hidden', f !== 'all' && card.dataset.cat !== f);
+        });
+      });
+    });
+
+    // Lightbox
+    let items = [], idx = 0;
+    function openLb(card) {
+      items = [...document.querySelectorAll('.gcard:not(.hidden)')];
+      idx = items.indexOf(card);
+      showLb();
+    }
+    function showLb() {
+      const c = items[idx];
+      document.getElementById('lb-img').src = c.dataset.src;
+      document.getElementById('lb-cat').textContent = c.querySelector('.gcard-cat').textContent;
+      document.getElementById('lb-title').textContent = c.dataset.title;
+      document.getElementById('lb-desc').textContent = c.dataset.desc;
+      document.getElementById('lb-counter').textContent = (idx+1) + ' / ' + items.length;
+      document.getElementById('lb').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb() {
+      document.getElementById('lb').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lbNav(dir) {
+      idx = (idx + dir + items.length) % items.length;
+      showLb();
+    }
+    document.querySelectorAll('.gcard').forEach(c => c.addEventListener('click', () => openLb(c)));
+    document.getElementById('lb').addEventListener('click', e => { if(e.target===document.getElementById('lb')) closeLb(); });
+    document.addEventListener('keydown', e => {
+      if(!document.getElementById('lb').classList.contains('open')) return;
+      if(e.key==='Escape') closeLb();
+      if(e.key==='ArrowRight') lbNav(1);
+      if(e.key==='ArrowLeft') lbNav(-1);
+    });
+  </script>
+</body>
+</html>

@@ -3,8 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mary Ann Menes | Business Manager & Operations Specialist</title>
-  <meta name="description" content="Mary Ann Menes — Executive Virtual Assistant, Creative Support & Property Management specialist. Helping businesses run smoothly and grow." />
+  <title>Mary Ann Menes | Operations Manager — Business Operations &amp; Product Ops</title>
+  <meta name="description" content="Mary Ann Menes — Operations Manager specialising in business operations, process optimisation, systems implementation and workflow automation. Builds the digital infrastructure and internal platforms that growing companies scale on." />
+  <meta name="keywords" content="Operations Manager, Business Operations, Product Operations, Process Optimization, Systems Implementation, Workflow Automation, Project Management, Stakeholder Management, Requirements Gathering, Process Documentation, Cross-functional Collaboration, Technical Product Manager, Zapier, Notion, WordPress, Google Workspace, Buildium, Acumatica" />
+  <meta name="author" content="Mary Ann Menes" />
+  <link rel="canonical" href="https://maryannmenes.com/" />
+
+  <!-- Open Graph — controls how the link renders when shared with a recruiter -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Mary Ann Menes | Operations Manager — Business Operations &amp; Product Ops" />
+  <meta property="og:description" content="Operations Manager who scales business processes, builds digital infrastructure and turns manual workflows into systems. Moving toward technical product management." />
+  <meta property="og:image" content="photo.JPG" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data — parsed by search engines and AI candidate screeners -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mary Ann Menes",
+    "jobTitle": "Operations Manager",
+    "description": "Strategic operations manager skilled in scaling business processes, building digital infrastructure, and driving organizational growth.",
+    "email": "mailto:maryannmendozamenes@gmail.com",
+    "url": "https://maryannmenes.com/",
+    "sameAs": ["https://www.linkedin.com/in/mary-ann-menes"],
+    "address": { "@type": "PostalAddress", "addressCountry": "PH" },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Romblon State University",
+      "address": { "@type": "PostalAddress", "addressLocality": "Odiongan", "addressRegion": "Romblon", "addressCountry": "PH" }
+    },
+    "worksFor": { "@type": "Organization", "name": "New Life Capital Partners Inc." },
+    "hasOccupation": [
+      {
+        "@type": "Occupation",
+        "name": "Executive Partner",
+        "occupationLocation": { "@type": "Organization", "name": "New Life Capital Partners Inc." },
+        "skills": "Business Operations, Process Optimization, Systems Implementation, Workflow Automation, Web Platform Management, Vendor Management, Strategic Planning"
+      },
+      {
+        "@type": "Occupation",
+        "name": "Property Manager",
+        "occupationLocation": { "@type": "Organization", "name": "Globalland Property Management Inc." },
+        "skills": "Operations Management, Financial Tracking, Compliance, Stakeholder Communication, Policy Implementation"
+      }
+    ],
+    "knowsAbout": ["Business Operations","Process Optimization","Strategic Planning","Systems Implementation","Project Management","Workflow Automation","Product Operations","Digital Marketing","Requirements Documentation","Stakeholder Management"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -801,102 +847,6 @@
 
     .form-success { display: none; text-align: center; padding: 1rem; color: #90d4a8; font-size: 0.9rem; font-weight: 500; }
 
-    /* ── GALLERY ─────────────────────────────────────────────── */
-    .gfilter {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      color: var(--forest-light);
-      padding: 0.45rem 1.1rem;
-      border-radius: 50px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: all var(--transition);
-    }
-    .gfilter:hover, .gfilter.active {
-      background: var(--forest);
-      color: var(--white);
-      border-color: var(--forest);
-    }
-
-    .gallery-grid {
-      columns: 3;
-      column-gap: 1.25rem;
-    }
-    @media (max-width: 900px) { .gallery-grid { columns: 2; } }
-    @media (max-width: 500px) { .gallery-grid { columns: 1; } }
-
-    .gallery-item {
-      break-inside: avoid;
-      margin-bottom: 1.25rem;
-      border-radius: var(--radius);
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      background: var(--cream);
-      border: 1px solid var(--border);
-    }
-    .gallery-item img {
-      width: 100%;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-    .gallery-item:hover img { transform: scale(1.04); }
-
-    .gallery-placeholder {
-      width: 100%;
-      min-height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--mint) 0%, var(--cream) 100%);
-      color: var(--sage-dark);
-      font-size: 0.8rem;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      letter-spacing: 0.04em;
-    }
-
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(44,53,37,0.88) 0%, transparent 55%);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding: 1.1rem;
-    }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-    .gallery-cat-tag {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      background: var(--sage-dark);
-      color: #fff;
-      padding: 0.2rem 0.6rem;
-      border-radius: 50px;
-      margin-bottom: 0.35rem;
-    }
-    .gallery-info h4 {
-      font-size: 0.9rem;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-    }
-    .gallery-zoom {
-      font-size: 1.4rem;
-      align-self: flex-end;
-      margin-bottom: 0.1rem;
-    }
-
-    .gallery-item.hidden { display: none; }
-
     /* ── FOOTER ──────────────────────────────────────────────── */
     footer { background: #141a10; padding: 2.5rem 2rem; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
@@ -948,12 +898,11 @@
     <a href="#home" class="nav-logo">Mary Ann <span>Menes</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#services">What I Do</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#work">My Work</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -964,20 +913,20 @@
   <section id="home">
     <div class="hero-inner">
       <div class="hero-text">
-        <div class="hero-badge">Available for Work</div>
+        <div class="hero-badge">Open to New Opportunities</div>
         <h1>Hi, I'm <span class="highlight">Mary Ann</span> Menes</h1>
         <div class="hero-subtitle">
           <span>Operations Manager</span>
           <span class="sep">|</span>
           <span>Business Operations</span>
           <span class="sep">|</span>
-          <span>Creative Support</span>
+          <span>Product Ops</span>
         </div>
         <p class="hero-desc">
-          Strategic operations manager skilled in scaling business processes, building digital infrastructure, and driving organizational growth. Experienced in designing and implementing operational systems, optimizing workflows, and developing digital solutions that enable business expansion. Proven track record managing complex operations and supporting leadership on strategic initiatives.
+          Strategic operations manager skilled in scaling business processes, building digital infrastructure, and driving organizational growth. I design and implement the operational systems, workflows, and digital platforms that let a business expand without breaking.
         </p>
         <div class="hero-buttons">
-          <a href="#contact" class="btn-primary">✉ Let's Work Together</a>
+          <a href="#contact" class="btn-primary">✉ Let's Connect</a>
           <a href="#experience" class="btn-secondary">View My Work →</a>
         </div>
         <div class="hero-socials">
@@ -997,7 +946,7 @@
           <img src="photo.JPG" alt="Mary Ann Menes" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 1.25rem;display:block;border:3px solid var(--mint-deep);" />
 
           <h3>Mary Ann Menes</h3>
-          <p>Executive VA & Operations Specialist</p>
+          <p>Operations Manager · Business Operations</p>
           <div class="stat-row">
             <div class="stat">
               <div class="stat-num">4+</div>
@@ -1008,7 +957,7 @@
               <div class="stat-label">Core Skills</div>
             </div>
             <div class="stat">
-              <div class="stat-num">14+</div>
+              <div class="stat-num">17</div>
               <div class="stat-label">Tools</div>
             </div>
           </div>
@@ -1016,7 +965,7 @@
 
         <div class="floating-tag tag-1">
           <div class="dot" style="background:#5a9a60"></div>
-          Open to Opportunities
+          Open to Remote Roles
         </div>
       </div>
     </div>
@@ -1032,52 +981,52 @@
             <img src="photo.JPG" alt="Mary Ann Menes" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:1.5rem;display:block;border:2px solid var(--sage-dark);" />
 
             <h3>Mary Ann Menes</h3>
-            <p>Executive VA · Creative Support · Property Manager</p>
+            <p>Operations Manager · Business Operations</p>
             <div class="about-detail-item">
               <div class="icon-circle">🌏</div>
-              <span>Based in the Philippines</span>
+              <span>Based in the Philippines · Remote-ready</span>
             </div>
             <div class="about-detail-item">
               <div class="icon-circle">🗣</div>
-              <span>English & Filipino</span>
+              <span>English & Filipino — fluent</span>
             </div>
             <div class="about-detail-item">
               <div class="icon-circle">🕒</div>
-              <span>Open to Remote & Flexible Hours</span>
+              <span>Available to overlap US & APAC hours</span>
             </div>
             <div class="about-detail-item">
               <div class="icon-circle">🎓</div>
-              <span>B.S. Public Administration — Cum Laude</span>
+              <span>Bachelor in Public Administration — Cum Laude</span>
             </div>
           </div>
         </div>
         <div class="about-text">
           <div class="section-label">About Me</div>
           <div class="divider"></div>
-          <h2 class="section-title">Reliable. Detail-Oriented.<br/>Always One Step Ahead.</h2>
+          <h2 class="section-title">I Build the Systems<br/>Businesses Grow On.</h2>
           <p class="section-desc">
-            I'm Mary Ann — an Executive and Operations Virtual Assistant who brings calm, clarity, and momentum to busy professionals and growing businesses. Whether it's managing complex calendars, streamlining workflows with automation, overseeing property operations, or crafting compelling social content — I'm here to make your operations frictionless.
+            I'm Mary Ann — an operations manager with four years scaling business processes and building the digital infrastructure behind growing companies. My work sits where operations meets product: I document how a process should work, translate it into requirements, build or configure the system that runs it, and iterate once real users are on it. That path has taken me from managing a residential property portfolio to running end-to-end operations and web platforms for a multi-unit real estate business.
           </p>
           <div class="value-cards">
             <div class="value-card">
-              <div class="vc-icon">⚡</div>
-              <h4>Fast & Reliable</h4>
-              <p>Responsive, proactive, and consistent — you can count on me.</p>
-            </div>
-            <div class="value-card">
-              <div class="vc-icon">🔧</div>
+              <div class="vc-icon">🧩</div>
               <h4>Systems Thinker</h4>
-              <p>I don't just complete tasks — I build processes that last.</p>
+              <p>I don't just close tasks — I design processes and systems that outlast me.</p>
             </div>
             <div class="value-card">
-              <div class="vc-icon">🎨</div>
-              <h4>Creative Edge</h4>
-              <p>From Canva designs to social strategy, I bring visual polish.</p>
+              <div class="vc-icon">📝</div>
+              <h4>Requirements-First</h4>
+              <p>I write the spec and SOP before building, so the outcome is defined up front.</p>
             </div>
             <div class="value-card">
-              <div class="vc-icon">📊</div>
-              <h4>Detail-Driven</h4>
-              <p>Accuracy matters. I track every detail so nothing slips through.</p>
+              <div class="vc-icon">⚙️</div>
+              <h4>Technically Hands-On</h4>
+              <p>I ship web platforms, wire up integrations, and automate what shouldn't be manual.</p>
+            </div>
+            <div class="value-card">
+              <div class="vc-icon">🤝</div>
+              <h4>Stakeholder Fluent</h4>
+              <p>Data-driven in how I brief leadership, vendors, and end users.</p>
             </div>
           </div>
         </div>
@@ -1090,81 +1039,83 @@
     <div class="section-inner">
       <div class="services-header reveal">
         <div class="left">
-          <div class="section-label">What I Offer</div>
+          <div class="section-label">Core Capabilities</div>
           <div class="divider"></div>
-          <h2 class="section-title">Services Tailored<br/>to Your Business</h2>
+          <h2 class="section-title">What I Bring<br/>to a Team</h2>
         </div>
-        <a href="#contact" class="btn-primary" style="flex-shrink:0;">Get Started →</a>
+        <a href="#contact" class="btn-primary" style="flex-shrink:0;">Get In Touch →</a>
       </div>
       <div class="services-grid">
 
         <div class="service-card reveal">
-          <div class="service-icon">🗂</div>
-          <h3>Executive &amp; Operations Assistance</h3>
-          <p>High-level support for busy executives — calendar management, email handling, meeting prep, strategic research, and seamless day-to-day operations.</p>
+          <div class="service-icon">📊</div>
+          <h3>Business Operations</h3>
+          <p>Running end-to-end operations for a multi-unit real estate business — workflows, vendor relationships, financial tracking, compliance, and the day-to-day execution leadership relies on.</p>
           <div class="service-tags">
-            <span class="stag">Calendar Mgmt</span>
-            <span class="stag">Email Triage</span>
-            <span class="stag">Research</span>
+            <span class="stag">Operations Management</span>
+            <span class="stag">Vendor Management</span>
+            <span class="stag">Compliance</span>
             <span class="stag">Reporting</span>
           </div>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">🏠</div>
-          <h3>Property Management Support</h3>
-          <p>End-to-end residential property operations — tenant and developer communication, financial tracking, compliance, and policy implementation.</p>
+          <div class="service-icon">🔄</div>
+          <h3>Process Optimization</h3>
+          <p>Mapping how work actually flows, finding the bottleneck, and redesigning the process around it. I document current state, define the target state, then measure against KPIs to confirm the change held.</p>
           <div class="service-tags">
-            <span class="stag">Tenant Comms</span>
-            <span class="stag">Financial Tracking</span>
-            <span class="stag">Buildium</span>
-            <span class="stag">Compliance</span>
+            <span class="stag">Process Mapping</span>
+            <span class="stag">SOP Documentation</span>
+            <span class="stag">KPI Tracking</span>
+            <span class="stag">Continuous Improvement</span>
           </div>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">📱</div>
-          <h3>Social Media &amp; Digital Marketing</h3>
-          <p>Strategy, content creation, scheduling, and analytics — keeping your brand visible and engaging across platforms.</p>
+          <div class="service-icon">🛠</div>
+          <h3>Systems Implementation</h3>
+          <p>Configuring and running the platforms a business operates on — property management systems, CRMs, and workspace tooling — including data setup, user access, and adoption support.</p>
           <div class="service-tags">
-            <span class="stag">Content Creation</span>
-            <span class="stag">Canva</span>
-            <span class="stag">Buffer</span>
-            <span class="stag">Meta Suite</span>
+            <span class="stag">Buildium</span>
+            <span class="stag">Acumatica</span>
+            <span class="stag">CRM</span>
+            <span class="stag">Google Admin Console</span>
           </div>
         </div>
 
         <div class="service-card reveal">
           <div class="service-icon">⚙️</div>
-          <h3>Workflow &amp; Automation</h3>
-          <p>Eliminating repetitive tasks with smart automations using Zapier and other tools, so your team can focus on what matters most.</p>
+          <h3>Workflow Automation &amp; Integrations</h3>
+          <p>Connecting tools that don't talk to each other and removing manual steps entirely. Zapier integrations, AI-assisted workflows, and automations that cut repetitive work out of the day.</p>
           <div class="service-tags">
             <span class="stag">Zapier</span>
-            <span class="stag">Google Workspace</span>
-            <span class="stag">Process Design</span>
+            <span class="stag">API Integrations</span>
+            <span class="stag">Claude AI</span>
+            <span class="stag">OpenAI</span>
           </div>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">🎨</div>
-          <h3>Creative &amp; Visual Design</h3>
-          <p>Polished visual content — graphics, presentations, and branded materials that communicate your message with impact.</p>
+          <div class="service-icon">🌐</div>
+          <h3>Web Platform &amp; Product Ops</h3>
+          <p>Building and maintaining company web platforms end-to-end — scoping requirements, building the site, publishing, and iterating. Comfortable in WordPress, Carrot, and GitHub.</p>
           <div class="service-tags">
-            <span class="stag">Canva</span>
-            <span class="stag">Adobe</span>
-            <span class="stag">Presentations</span>
-            <span class="stag">Brand Assets</span>
+            <span class="stag">WordPress</span>
+            <span class="stag">Carrot</span>
+            <span class="stag">GitHub</span>
+            <span class="stag">Requirements Docs</span>
           </div>
         </div>
 
         <div class="service-card reveal">
-          <div class="service-icon">🤝</div>
-          <h3>Customer Service &amp; Communication</h3>
-          <p>Professional, warm, and solution-focused communication with clients, stakeholders, and teams to keep relationships strong.</p>
+          <div class="service-icon">📋</div>
+          <h3>Project &amp; Stakeholder Management</h3>
+          <p>Driving initiatives from scoping to launch across leadership, vendors, and end users — the cross-functional coordination and prioritisation work that sits at the centre of product management.</p>
           <div class="service-tags">
-            <span class="stag">CRM Support</span>
-            <span class="stag">Stakeholder Mgmt</span>
-            <span class="stag">Slack</span>
+            <span class="stag">Project Management</span>
+            <span class="stag">Stakeholder Alignment</span>
+            <span class="stag">Prioritisation</span>
+            <span class="stag">Notion</span>
           </div>
         </div>
 
@@ -1179,21 +1130,21 @@
         <div class="section-label">Work History</div>
         <div class="divider"></div>
         <h2 class="section-title">Professional Experience</h2>
-        <p class="section-desc">Hands-on experience across executive support, property management, and business operations.</p>
+        <p class="section-desc">Four years across business operations, systems implementation, and property management — with responsibility growing from executing operations to designing them.</p>
       </div>
       <div class="exp-grid">
 
         <div class="exp-card featured reveal">
           <span class="exp-badge badge-current">Most Recent</span>
-          <div class="exp-date">Feb 2025 – April 2026</div>
-          <h3>Virtual Executive Assistant</h3>
-          <p class="exp-company">Freelance · Real Estate Industry</p>
+          <div class="exp-date">Feb 2025 – July 2026</div>
+          <h3>Executive Partner</h3>
+          <p class="exp-company">New Life Capital Partners Inc.</p>
           <ul class="exp-list">
-            <li>Closely assisted the Executive in managing calendars and appointments, ensuring zero scheduling conflicts.</li>
-            <li>Built and maintained system automations to reduce manual work and improve team efficiency.</li>
-            <li>Organized data records and provided strategic research support for business planning.</li>
-            <li>Managed social media and marketing content to grow online presence.</li>
-            <li>Handled ad-hoc administrative requests to keep real estate operations running smoothly.</li>
+            <li>Built and scaled operations for a multi-unit real estate business, managing end-to-end workflows, vendor relationships, and core business processes.</li>
+            <li>Supported leadership on strategic expansion decisions, providing the research and operational analysis behind them.</li>
+            <li>Developed and maintained company web platforms — owning requirements, build, publishing, and iteration across WordPress, Carrot, and GitHub.</li>
+            <li>Ran marketing operations and content strategy across social media and brand presence.</li>
+            <li>Designed and documented SOPs and process specifications, then implemented Zapier automations and AI-assisted workflows against them to remove manual steps.</li>
           </ul>
         </div>
 
@@ -1203,11 +1154,11 @@
           <h3>Property Manager</h3>
           <p class="exp-company">Globalland Property Management Inc.</p>
           <ul class="exp-list">
-            <li>Oversaw all day-to-day operations of a residential property portfolio.</li>
-            <li>Managed developer and client communications, maintaining strong stakeholder relationships.</li>
-            <li>Handled financial tracking, budgeting, and compliance with local regulations.</li>
-            <li>Implemented and enforced property policies to uphold operational standards.</li>
-            <li>Ensured smooth, efficient operations that met the needs of all parties involved.</li>
+            <li>Managed day-to-day operations for a residential property, coordinating developer and client communications across competing stakeholder priorities.</li>
+            <li>Handled financial tracking, compliance, and regulatory requirements for the property.</li>
+            <li>Spearheaded the establishment of the Officer and governance structure from the ground up.</li>
+            <li>Implemented community policies and initiatives that measurably improved resident satisfaction and property management effectiveness.</li>
+            <li>Worked daily in Buildium and Acumatica to keep records, reporting, and operations accurate.</li>
           </ul>
         </div>
 
@@ -1216,88 +1167,11 @@
       <!-- Work & Reviews Buttons -->
       <div class="reveal" style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;">
         <a href="selected-work.html" class="btn-primary">🗂 View Selected Work</a>
-        <a href="reviews.html" class="btn-secondary">⭐ Read Client Reviews</a>
+        <a href="reviews.html" class="btn-secondary">⭐ Read Recommendations</a>
       </div>
 
     </div>
   </section>
-
-  <!-- ── SELECTED WORK GALLERY ────────────────────────────── -->
-  <section id="work" style="background:linear-gradient(180deg,var(--cream) 0%,var(--white) 100%);">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">Portfolio</div>
-        <div class="divider"></div>
-        <h2 class="section-title">Selected Work</h2>
-        <p class="section-desc">A glimpse into the work I've delivered — from creative marketing materials to organised systems and operations.</p>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="gallery-filters reveal" style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2rem;">
-        <button class="gfilter active" data-filter="all">All Work</button>
-        <button class="gfilter" data-filter="flyer">Flyers & Graphics</button>
-        <button class="gfilter" data-filter="social">Social Media</button>
-        <button class="gfilter" data-filter="doc">Documents & Reports</button>
-        <button class="gfilter" data-filter="other">Other</button>
-      </div>
-
-      <!-- Gallery Grid -->
-      <div class="gallery-grid" id="galleryGrid">
-
-        <!-- PLACEHOLDERS — replace src with your actual image files -->
-        <div class="gallery-item reveal" data-cat="flyer" data-title="Marketing Flyer" data-desc="Promotional flyer designed for a real estate campaign">
-          <img src="work1.jpg" alt="Marketing Flyer" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
-          <div class="gallery-placeholder" style="display:none"><span>📁 work1.jpg</span></div>
-          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Flyers & Graphics</span><h4>Marketing Flyer</h4></div><div class="gallery-zoom">🔍</div></div>
-        </div>
-
-        <div class="gallery-item reveal" data-cat="social" data-title="Social Media Post" data-desc="Branded content created for Facebook and Instagram">
-          <img src="work2.jpg" alt="Social Media Post" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
-          <div class="gallery-placeholder" style="display:none"><span>📁 work2.jpg</span></div>
-          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Social Media</span><h4>Social Media Post</h4></div><div class="gallery-zoom">🔍</div></div>
-        </div>
-
-        <div class="gallery-item reveal" data-cat="flyer" data-title="Event Flyer" data-desc="Creative event flyer with branded visuals">
-          <img src="work3.jpg" alt="Event Flyer" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
-          <div class="gallery-placeholder" style="display:none"><span>📁 work3.jpg</span></div>
-          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Flyers & Graphics</span><h4>Event Flyer</h4></div><div class="gallery-zoom">🔍</div></div>
-        </div>
-
-        <div class="gallery-item reveal" data-cat="doc" data-title="Report Template" data-desc="Professional document template for business reporting">
-          <img src="work4.jpg" alt="Report Template" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
-          <div class="gallery-placeholder" style="display:none"><span>📁 work4.jpg</span></div>
-          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Documents</span><h4>Report Template</h4></div><div class="gallery-zoom">🔍</div></div>
-        </div>
-
-        <div class="gallery-item reveal" data-cat="social" data-title="Instagram Content" data-desc="Engaging social content for brand growth">
-          <img src="work5.jpg" alt="Instagram Content" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
-          <div class="gallery-placeholder" style="display:none"><span>📁 work5.jpg</span></div>
-          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Social Media</span><h4>Instagram Content</h4></div><div class="gallery-zoom">🔍</div></div>
-        </div>
-
-        <div class="gallery-item reveal" data-cat="other" data-title="Calendar & System" data-desc="Organised scheduling and workflow system setup">
-          <img src="work6.jpg" alt="Calendar & System" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex';this.style.display='none'" />
-          <div class="gallery-placeholder" style="display:none"><span>📁 work6.jpg</span></div>
-          <div class="gallery-overlay"><div class="gallery-info"><span class="gallery-cat-tag">Other</span><h4>Calendar & System</h4></div><div class="gallery-zoom">🔍</div></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Lightbox -->
-  <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column;padding:2rem;">
-    <button onclick="closeLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;">✕</button>
-    <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:75vh;border-radius:12px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.5);" />
-    <div style="text-align:center;margin-top:1.25rem;">
-      <h3 id="lightboxTitle" style="color:#fff;font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:0.4rem;"></h3>
-      <p id="lightboxDesc" style="color:rgba(255,255,255,0.6);font-size:0.9rem;"></p>
-    </div>
-    <div style="display:flex;gap:1.5rem;margin-top:1.5rem;">
-      <button onclick="lightboxNav(-1)" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.6rem 1.5rem;border-radius:50px;cursor:pointer;font-size:0.9rem;">← Prev</button>
-      <button onclick="lightboxNav(1)" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.6rem 1.5rem;border-radius:50px;cursor:pointer;font-size:0.9rem;">Next →</button>
-    </div>
-  </div>
 
   <!-- ── SKILLS ─────────────────────────────────────────── -->
   <section id="skills">
@@ -1306,19 +1180,19 @@
         <div class="section-label">Expertise</div>
         <div class="divider"></div>
         <h2 class="section-title">Skills &amp; Tools</h2>
-        <p class="section-desc">A versatile skill set built through real-world experience, continuous learning, and a passion for organisation and efficiency.</p>
+        <p class="section-desc">Core competencies and the systems I work in daily — built through four years of hands-on operations, systems implementation, and platform work.</p>
       </div>
       <div class="skills-layout">
 
         <div class="reveal">
           <h3 style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--forest);margin-bottom:1.25rem;">Core Competencies</h3>
           <div class="core-skills-grid">
-            <div class="skill-pill"><span class="sp-icon">🗂</span> Ops &amp; Executive Assistance</div>
-            <div class="skill-pill"><span class="sp-icon">🏠</span> Property Management</div>
-            <div class="skill-pill"><span class="sp-icon">😊</span> Customer Service</div>
-            <div class="skill-pill"><span class="sp-icon">📱</span> Social Media Management</div>
-            <div class="skill-pill"><span class="sp-icon">🎨</span> Digital Marketing &amp; Design</div>
-            <div class="skill-pill"><span class="sp-icon">⚙️</span> Workflow &amp; Automations</div>
+            <div class="skill-pill"><span class="sp-icon">📊</span> Business Operations</div>
+            <div class="skill-pill"><span class="sp-icon">🔄</span> Process Optimization</div>
+            <div class="skill-pill"><span class="sp-icon">🎯</span> Strategic Planning</div>
+            <div class="skill-pill"><span class="sp-icon">🛠</span> Systems Implementation</div>
+            <div class="skill-pill"><span class="sp-icon">📋</span> Project Management</div>
+            <div class="skill-pill"><span class="sp-icon">🎨</span> Digital Marketing &amp; Visual Design</div>
           </div>
         </div>
 
@@ -1326,41 +1200,43 @@
           <h3>Tools &amp; Systems</h3>
 
           <div class="tools-category">
-            <div class="tools-category-label">Productivity &amp; Communication</div>
+            <div class="tools-category-label">Productivity &amp; Systems</div>
             <div class="tools-row">
-              <span class="tool-tag">Microsoft Office Suite</span>
               <span class="tool-tag">Google Workspace</span>
               <span class="tool-tag">Google Admin Console</span>
-              <span class="tool-tag">Evernote</span>
+              <span class="tool-tag">Microsoft Office</span>
               <span class="tool-tag">Slack</span>
-            </div>
-          </div>
-
-          <div class="tools-category">
-            <div class="tools-category-label">Marketing &amp; Creative</div>
-            <div class="tools-row">
-              <span class="tool-tag">Canva</span>
-              <span class="tool-tag">Adobe</span>
-              <span class="tool-tag">Buffer</span>
-              <span class="tool-tag">Meta Business Suite</span>
-              <span class="tool-tag">WordPress</span>
-            </div>
-          </div>
-
-          <div class="tools-category">
-            <div class="tools-category-label">AI &amp; Automation</div>
-            <div class="tools-row">
-              <span class="tool-tag">Claude AI</span>
-              <span class="tool-tag">OpenAI</span>
               <span class="tool-tag">Zapier</span>
             </div>
           </div>
 
           <div class="tools-category">
-            <div class="tools-category-label">Property &amp; Development</div>
+            <div class="tools-category-label">Product &amp; Development</div>
+            <div class="tools-row">
+              <span class="tool-tag">WordPress</span>
+              <span class="tool-tag">Claude AI</span>
+              <span class="tool-tag">OpenAI</span>
+              <span class="tool-tag">GitHub</span>
+            </div>
+          </div>
+
+          <div class="tools-category">
+            <div class="tools-category-label">Operations &amp; Property Management</div>
             <div class="tools-row">
               <span class="tool-tag">Buildium</span>
-              <span class="tool-tag">Github</span>
+              <span class="tool-tag">CRM</span>
+              <span class="tool-tag">Acumatica</span>
+              <span class="tool-tag">Carrot</span>
+              <span class="tool-tag">Notion</span>
+            </div>
+          </div>
+
+          <div class="tools-category">
+            <div class="tools-category-label">Design &amp; Marketing</div>
+            <div class="tools-row">
+              <span class="tool-tag">Canva</span>
+              <span class="tool-tag">Adobe</span>
+              <span class="tool-tag">Meta Business Suite</span>
             </div>
           </div>
         </div>
@@ -1375,7 +1251,7 @@
         <div class="section-label">Background</div>
         <div class="divider"></div>
         <h2 class="section-title">Education &amp; Training</h2>
-        <p class="section-desc">A strong academic foundation paired with practical certifications and professional training.</p>
+        <p class="section-desc">A strong academic foundation, practical certifications, and ongoing self-directed study toward product management.</p>
       </div>
       <div class="edu-grid">
 
@@ -1423,8 +1299,8 @@
       <div class="reveal">
         <div class="section-label">Get In Touch</div>
         <div class="divider"></div>
-        <h2 class="section-title">Let's Work Together</h2>
-        <p class="section-desc">Ready to streamline your operations and take your business to the next level? I'd love to hear about your needs.</p>
+        <h2 class="section-title">Let's Talk</h2>
+        <p class="section-desc">Open to operations, product operations, and technical product roles — remote or hybrid. If you're hiring, or just want to compare notes on the ops-to-product path, I'd like to hear from you.</p>
       </div>
       <div class="contact-layout reveal">
         <div class="contact-info">
@@ -1455,7 +1331,7 @@
             <div class="ci-icon">🕒</div>
             <div>
               <div class="ci-label">Availability</div>
-              <div class="ci-value">Open to Remote Full-Time &amp; Freelance</div>
+              <div class="ci-value">Open to Remote Full-Time · Immediate start</div>
             </div>
           </div>
         </div>
@@ -1466,7 +1342,7 @@
             <div class="form-row">
               <div class="form-group">
                 <label>First Name</label>
-                <input type="text" placeholder="Jane" required />
+                <input type="text" placeholder="Jane" required autocomplete="given-name" />
               </div>
               <div class="form-group">
                 <label>Last Name</label>
@@ -1478,20 +1354,20 @@
               <input type="email" placeholder="jane@company.com" required />
             </div>
             <div class="form-group">
-              <label>I'm Interested In</label>
+              <label>Reason for Reaching Out</label>
               <select>
-                <option value="">Select a service...</option>
-                <option>Executive & Operations Assistance</option>
-                <option>Property Management Support</option>
-                <option>Social Media & Digital Marketing</option>
-                <option>Workflow & Automation</option>
-                <option>Creative & Visual Design</option>
-                <option>General Inquiry</option>
+                <option value="">Select one...</option>
+                <option>Job opportunity — Operations</option>
+                <option>Job opportunity — Product / Product Ops</option>
+                <option>Job opportunity — Project / Program Management</option>
+                <option>Contract or consulting engagement</option>
+                <option>Networking / referral</option>
+                <option>General inquiry</option>
               </select>
             </div>
             <div class="form-group">
               <label>Message</label>
-              <textarea placeholder="Tell me about your project or needs..."></textarea>
+              <textarea placeholder="Tell me about the role or opportunity..."></textarea>
             </div>
             <button type="submit" class="btn-submit">✉ Send Message</button>
             <div class="form-success" id="formSuccess">✅ Message sent! I'll be in touch soon.</div>
@@ -1509,7 +1385,7 @@
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <a href="#services">What I Do</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -1581,62 +1457,6 @@
       };
       reader.readAsDataURL(file);
     }
-
-    // Gallery filter
-    document.querySelectorAll('.gfilter').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.gfilter').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.gallery-item').forEach(item => {
-          item.classList.toggle('hidden', filter !== 'all' && item.dataset.cat !== filter);
-        });
-      });
-    });
-
-    // Gallery click → lightbox
-    let currentItems = [];
-    let currentIndex = 0;
-
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', () => {
-        currentItems = [...document.querySelectorAll('.gallery-item:not(.hidden)')];
-        currentIndex = currentItems.indexOf(item);
-        openLightbox(item);
-      });
-    });
-
-    function openLightbox(item) {
-      const lb = document.getElementById('lightbox');
-      const img = item.querySelector('img');
-      document.getElementById('lightboxImg').src = img && img.style.display !== 'none' ? img.src : '';
-      document.getElementById('lightboxTitle').textContent = item.dataset.title;
-      document.getElementById('lightboxDesc').textContent = item.dataset.desc;
-      lb.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-      document.body.style.overflow = '';
-    }
-
-    function lightboxNav(dir) {
-      currentIndex = (currentIndex + dir + currentItems.length) % currentItems.length;
-      openLightbox(currentItems[currentIndex]);
-    }
-
-    document.getElementById('lightbox').addEventListener('click', function(e) {
-      if (e.target === this) closeLightbox();
-    });
-
-    document.addEventListener('keydown', e => {
-      if (document.getElementById('lightbox').style.display === 'flex') {
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') lightboxNav(1);
-        if (e.key === 'ArrowLeft') lightboxNav(-1);
-      }
-    });
 
     // Photo preview — about card
     function previewAboutPhoto(input) {

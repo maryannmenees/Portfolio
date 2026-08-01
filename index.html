@@ -784,7 +784,7 @@
     /* ── EDUCATION ───────────────────────────────────────────── */
     #education { background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%); }
 
-    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .edu-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3rem; max-width: 640px; }
 
     .edu-card {
       background: var(--white);
@@ -797,8 +797,6 @@
 
     .edu-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
     .edu-icon.deg  { background: var(--mint); }
-    .edu-icon.cert { background: #f0ece0; }
-    .edu-icon.hs   { background: #e6ede3; }
 
     .edu-date { font-size: 0.78rem; font-weight: 600; color: var(--sage-dark); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
     .edu-card h3 { font-size: 1rem; color: var(--forest); font-family: 'Inter', sans-serif; font-weight: 700; margin-bottom: 0.25rem; }
@@ -868,7 +866,7 @@
       .services-grid { grid-template-columns: 1fr 1fr; }
       .exp-grid { grid-template-columns: 1fr; }
       .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .edu-grid { grid-template-columns: 1fr 1fr; }
+      .edu-grid { max-width: 100%; }
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
@@ -1251,8 +1249,8 @@
       <div class="reveal">
         <div class="section-label">Background</div>
         <div class="divider"></div>
-        <h2 class="section-title">Education &amp; Training</h2>
-        <p class="section-desc">A strong academic foundation, practical certifications, and ongoing self-directed study toward product management.</p>
+        <h2 class="section-title">Education</h2>
+        <p class="section-desc">The academic foundation behind my operations and systems work.</p>
       </div>
       <div class="edu-grid">
 
@@ -1266,27 +1264,6 @@
             <li>Best Research Awardee</li>
             <li>Student Leader Awardee</li>
             <li>Internship · CSC Romblon Field Office</li>
-          </ul>
-        </div>
-
-        <div class="edu-card reveal">
-          <div class="edu-icon hs">🏫</div>
-          <div class="edu-date">April 2012 – December 2016</div>
-          <h3>Junior &amp; Senior High School</h3>
-          <p class="edu-school">Sisters of Mary of Banneux, Inc. · Silang, Cavite</p>
-          <ul class="edu-awards">
-            <li>Full Academic Scholarship</li>
-          </ul>
-        </div>
-
-        <div class="edu-card reveal">
-          <div class="edu-icon cert">📜</div>
-          <div class="edu-date">Certifications</div>
-          <h3>Professional Certifications</h3>
-          <p class="edu-school">Technical &amp; Vocational Training</p>
-          <ul class="edu-awards">
-            <li>Typing I / PC Operations I–IV (335 hours)</li>
-            <li>Bookkeeping / Office Procedures (200 hours)</li>
           </ul>
         </div>
 
